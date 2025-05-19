@@ -81,8 +81,9 @@ class AddViewController: UIViewController {
         newTask.desc = tfdesc.text
         
         let currentDate = Date()
-        DateFormatter().dateFormat = "dd-MM-yyyy"
-        let dateString = DateFormatter().string(from: currentDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: currentDate)
         
         newTask.datetime = dateString
         ActionManager.shared.saveContext()
